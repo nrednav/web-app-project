@@ -6,5 +6,8 @@ Rails.application.routes.draw do
 	# Contact route
 	match '/contact', :to => 'main#contact', :via => :get
 
+	# Menu route
+	match '/menu', :to => 'menu#menu', :via => :get
+
 
 end

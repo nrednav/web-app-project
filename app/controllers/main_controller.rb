@@ -1,11 +1,11 @@
 class MainController < ApplicationController
 
 	def home
-		@title = "Home"
+		@title = t('main.home.title')
 	end
 
 	def contact
-		@title = "Contact us"
+		@title = t('main.contact.title')
 	end
 
 end

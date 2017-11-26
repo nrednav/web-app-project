@@ -38,9 +38,10 @@ en:
       title: "Home"
 
     contact:
-      title: "Contact"
+      title: "Contact us"
 
     navigation:
+      contact: "Contact"
       menu: "Menu"
       login: "Login"
       register: "Register"
