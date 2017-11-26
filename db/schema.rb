@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171126170736) do
+ActiveRecord::Schema.define(version: 20171123165508) do
 
   create_table "customers", force: :cascade do |t|
     t.string "name"
@@ -24,8 +24,9 @@ ActiveRecord::Schema.define(version: 20171126170736) do
     t.string "name"
     t.float "price"
     t.string "cuisine"
-    t.string "type"
-    t.text "dietaryReq"
+    t.string "mealType"
+    t.string "category"
+    t.text "dietaryReq", default: "None"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

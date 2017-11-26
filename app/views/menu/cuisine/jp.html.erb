@@ -1,5 +1,16 @@
 <h1>Japanese Cuisine</h1>
 
+<h2><u>Starters</u></h2>
+
+<h3><u>Soup</u></h3>
+<ul>
+	<% @food.where(:mealType => 'soup').each do |soup| %>
+		<li><%= soup.name %></li>
+	<% end %>
+</ul>
+
 <br>
 
-<%= link_to 'Back', request.referer.present? ? request.referer : root_path %>
+<br>
+
+<%= link_to 'Back', menu_path %>

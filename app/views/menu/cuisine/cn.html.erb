@@ -1,5 +1,40 @@
 <h1>Chinese cuisine</h1>
 
+	<h2><u>Starters</u></h2>
+
+		<h3><u>Appetizers</u></h3>
+			<h4><u>Chicken</u></h4>
+			<ul>
+				<% @food.where(:mealType => 'apt_ckn').each do |apt_ckn| %>
+					<li><%= apt_ckn.name %>&emsp; &pound;<%= apt_ckn.price %></li>
+				<% end %>
+			</ul>
+			
+			<h4><u>Veg</u></h4>
+			<ul>
+				<% @food.where(:mealType => 'apt_veg').each do |apt_veg| %>
+					<li><%= apt_veg.name %></li>
+				<% end %>
+			</ul>
+
+			<br>
+
+			<h4><u>Seafood</u></h4>
+			<ul>
+				<% @food.where(:mealType => 'apt_sea').each do |apt_sea| %>
+					<li><%= apt_sea.name %></li>
+				<% end %>
+			</ul>
+
+		<br>
+
+		<h3><u>Soup</u></h3>
+		<ul>
+			<% @food.where(:mealType => 'soup').each do |soup| %>
+				<li><%= soup.name %></li>
+			<% end %>
+		</ul>
+
 <br>
 
-<%= link_to 'Back', request.referer.present? ? request.referer : root_path %>
+<%= link_to 'Back', menu_path %>
