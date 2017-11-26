@@ -4,6 +4,9 @@ class CreateOrders < ActiveRecord::Migration[5.1]
 
     	t.integer :customerNumber
     	t.text :foodList
+    	t.date :orderDate
+    	t.float :orderTotal
+    	t.integer :orderQuantity
 
     	t.timestamps
     end
