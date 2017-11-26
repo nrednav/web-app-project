@@ -46,3 +46,10 @@ en:
       login: "Login"
       register: "Register"
 
+  menu:
+    
+    cuisine:
+      cn: "Chinese"
+      jp: "Japanese"
+      kr: "Korean"
+
