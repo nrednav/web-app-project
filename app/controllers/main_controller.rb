@@ -2,7 +2,6 @@ class MainController < ApplicationController
 
 	def home
 		@title = t('main.home.title')
-		@customers = Customer.all
 	end
 
 	def contact

@@ -7,7 +7,7 @@ class CreateFoods < ActiveRecord::Migration[5.1]
       t.float 'price'
       t.string 'cuisine'
       t.string 'mealType'
-      t.string 'category'
+      t.string 'course'
       t.text 'dietaryReq', :default => 'None'
 
       t.timestamps
