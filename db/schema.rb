@@ -24,9 +24,7 @@ ActiveRecord::Schema.define(version: 20171123165508) do
     t.string "name"
     t.float "price"
     t.string "cuisine"
-    t.string "mealType"
-    t.string "category"
-    t.text "dietaryReq", default: "None"
+    t.string "course"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

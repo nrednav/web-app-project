@@ -1,5 +1,53 @@
 <h1>Chinese cuisine</h1>
 
+<h2><u>Appetizers: -</u></h2>
+<% @food.where(course: 'appetizer').each do |appetizer| %>
+	<li><%= appetizer.name %> -	<%= number_to_currency(appetizer.price, :unit => "£") %></li>
+<% end %>
+<br>
+
+<h2><u>Main Course: -</u></h2>
+
+<h3><u>Chicken</u></h3>
+<% @food.where(course: 'main_chicken').each do |food| %>
+	<li><%= food.name %> - <%= number_to_currency(food.price, :unit => "£") %></li>
+<% end %>
+<br>
+
+<h3><u>Seafood</u></h3>
+<% @food.where(course: 'main_seafood').each do |food| %>
+	<li><%= food.name %> - <%= number_to_currency(food.price, :unit => "£") %></li>
+<% end %>
+<br>
+
+<h3><u>Vegetarian</u></h3>
+<% @food.where(course: 'main_veg').each do |food| %>
+	<li><%= food.name %> - <%= number_to_currency(food.price, :unit => "£") %></li>
+<% end %>
+<br>
+
+<h3><u>Rice</u></h3>
+<% @food.where(course: 'main_rice').each do |food| %>
+	<li><%= food.name %> - <%= number_to_currency(food.price, :unit => "£") %></li>
+<% end %>
+<br>
+
+<h3><u>Noodles</u></h3>
+<% @food.where(course: 'main_noodles').each do |food| %>
+	<li><%= food.name %> - <%= number_to_currency(food.price, :unit => "£") %></li>
+<% end %>
+<br>
+
+<h2><u>Desserts: -</u></h2>
+<% @food.where(course: 'dessert').each do |dessert| %>
+	<li><%= dessert.name %> - <%= number_to_currency(dessert.price, :unit => "£") %></li>
+<% end %>
+<br>
+
+<h2><u>Beverages: -</u></h2>
+<% @food.where(course: 'beverage').each do |beverage| %>
+	<li><%= beverage.name %> - <%= number_to_currency(beverage.price, :unit => "£") %></li>
+<% end %>
 <br>
 
 <%= link_to 'Back', menu_path %>
