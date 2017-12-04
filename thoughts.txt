@@ -1,0 +1,33 @@
+To convert number to currency in ruby: -
+-----------------------------------------------------
+number_to_currency(appetizer.price, :unit => "£")
+
+
+<form action="/order/create" method="post">
+
+	<input type="hidden" value="<%= form_authenticity_token %>" name="authenticity_token">
+	<input type="hidden" value=<%= appetizer.id %> name="food_id" >
+
+	<div class="field">
+		<label for="order_quantity">Qty:</label>
+		<input type="text" name="order[quantity]" id="order_quantity">
+	</div>
+
+	<div class="field">
+		<input type="submit">
+	</div>
+</form>
+
+def create
+	@order = Order.new
+
+	@quantity = params[:order][:quantity]
+	@food_id = params[:food_id]
+
+	puts @food_id
+	puts @quantity
+
+	@food = Food.find(@food_id)
+
+	redirect_to order_path
+end
