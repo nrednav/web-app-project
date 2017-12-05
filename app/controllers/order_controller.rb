@@ -26,8 +26,10 @@ class OrderController < ApplicationController
 				end
 			end
 
-			@order.contact_number = "N/A"
-			@order.delivery_address = "Somewhere"
+
+			@order.contact_number = params[:delivery][:contact_no]
+			@order.delivery_address = params[:delivery][:address]
+
 			@order.save
 
 			redirect_to order_path

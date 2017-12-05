@@ -10,3 +10,6 @@
 	</li>
 
 <p>Order total: <%= number_to_currency(@order.total, :unit => "£") %></p>
+
+<p>Delivering to: <%= @order.delivery_address %> </p>
+<p>Contact Info: <%= @order.contact_number %> </p>
