@@ -1,1 +1,12 @@
 <h1>Order Info:</h1>
+<h3>List of Food: -</h3>
+
+	<li>
+		<% @unique_foods.each do |food| %>
+			Name: <%= food.name %> <br>
+			Price: <%= number_to_currency(food.price, :unit => "£") %> <br>
+			Quantity: <%= @quantities[food] %> <br><br>
+		<% end %>
+	</li>
+
+<p>Order total: <%= number_to_currency(@order.total, :unit => "£") %></p>

@@ -31,3 +31,26 @@ def create
 
 	redirect_to order_path
 end
+
+		<li><%= appetizer.name %> -	<%= number_to_currency(appetizer.price, :unit => "£") %></li>
+
+		<input type="checkbox" name="checkbox[<%= appetizer.id %>[quantity]]">
+
+						 <input type="text" 
+				 		name="<%= appetizer.id %>[quantity]" 
+				 		size="2" 
+				 		id="<%= appetizer.id %>_quantity">
+
+		 	   <input type="checkbox" 
+			   name="food_selected[<%= appetizer.id %>]" 
+			   id="food_selected_<%= appetizer.id %>">
+
+
+			   
+<% @selected_foods.each do |key, value| %>
+	<li>
+		<p>Name: <%= Food.find(key).name %></p>
+		<p>Price: <%= Food.find(key).price %></p>
+		<p>Quantity: <%= value["quantity"] %></p>
+	</li>
+<% end %>
