@@ -19,5 +19,6 @@ Rails.application.routes.draw do
 	# Order routes
 	match '/order', :to => 'order#show', :via => :get
 	match '/order/create', :to => 'order#create', :via => :post
+	match '/order/edit', :to => 'order#edit', :via => :get
 
 end

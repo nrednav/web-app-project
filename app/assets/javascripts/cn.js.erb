@@ -1,0 +1,21 @@
+$(document).ready(function() {
+
+
+	// This function will handle providing the quantity of a selected food item with a default value of 1
+	$('.food_selected').each(function() {
+
+		$(this).change(function() {
+
+			var text = $(this).attr("id");
+			var id = text.substr(text.indexOf('_')+1, text.length);
+
+			if($(this).is(":checked")) {
+
+				$('#quantity_' + id).val("1");
+			} else {
+				$('#quantity_' + id).val("");
+			}
+		});
+	});
+
+});

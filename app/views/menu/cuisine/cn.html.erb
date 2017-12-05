@@ -5,17 +5,17 @@
 	<input type="hidden" value="<%= form_authenticity_token %>" name="authenticity_token">
 	
 	<h2><u>Appetizers: -</u></h2>
-	<% @food.where(course: 'appetizer').each do |appetizer| %>
+	<% @food.where(course: 'appetizer').each do |food| %>
 		<ul>
 			<li>
-				<%= appetizer.name %> -	<%= number_to_currency(appetizer.price, :unit => "£") %>
-				<input type="checkbox">
+				<%= food.name %> -	<%= number_to_currency(food.price, :unit => "£") %>
+				<input type="checkbox" class="food_selected" id="food_<%= food.id %>">
 			</li>
-				 <label for="<%= appetizer.id %>_quantity">Qty:</label>
+				 <label for="<%= food.id %>_quantity">Qty:</label>
 				 <input type="text" 
-				 		name="food[<%= appetizer.id %>][quantity]" 
+				 		name="food[<%= food.id %>][quantity]" 
 				 		size="2" 
-				 		id="<%= appetizer.id %>_quantity">
+				 		id="quantity_<%= food.id %>">
 		</ul>
 	<% end %>
 
@@ -23,111 +23,111 @@
 	<h2><u>Main Course: -</u></h2>
 
 	<h3><u>Chicken</u></h3>
-	<% @food.where(course: 'main_chicken').each do |chicken| %>
+	<% @food.where(course: 'main_chicken').each do |food| %>
 		<ul>
 			<li>
-				<%= chicken.name %> -	<%= number_to_currency(chicken.price, :unit => "£") %>
-				<input type="checkbox">
+				<%= food.name %> -	<%= number_to_currency(food.price, :unit => "£") %>
+				<input type="checkbox" class="food_selected" id="food_<%= food.id %>">
 			</li>
-				 <label for="<%= chicken.id %>_quantity">Qty:</label>
+				 <label for="<%= food.id %>_quantity">Qty:</label>
 				 <input type="text" 
-				 		name="food[<%= chicken.id %>][quantity]" 
+				 		name="food[<%= food.id %>][quantity]" 
 				 		size="2" 
-				 		id="<%= chicken.id %>_quantity">
+				 		id="quantity_<%= food.id %>">
 		</ul>
 	<% end %>
 
 	<h3><u>Vegetarian</u></h3>
-	<% @food.where(course: 'main_veg').each do |veg| %>
+	<% @food.where(course: 'main_veg').each do |food| %>
 		<ul>
 			<li>
-				<%= veg.name %> -	<%= number_to_currency(veg.price, :unit => "£") %>
-				<input type="checkbox">
+				<%= food.name %> -	<%= number_to_currency(food.price, :unit => "£") %>
+				<input type="checkbox" class="food_selected" id="food_<%= food.id %>">
 			</li>
-				 <label for="<%= veg.id %>_quantity">Qty:</label>
+				 <label for="<%= food.id %>_quantity">Qty:</label>
 				 <input type="text" 
-				 		name="food[<%= veg.id %>][quantity]" 
+				 		name="food[<%= food.id %>][quantity]" 
 				 		size="2" 
-				 		id="<%= veg.id %>_quantity">
+				 		id="quantity_<%= food.id %>">
 		</ul>
 	<% end %>
 
 	<h3><u>Seafood</u></h3>
-	<% @food.where(course: 'main_seafood').each do |seafood| %>
+	<% @food.where(course: 'main_seafood').each do |food| %>
 		<ul>
 			<li>
-				<%= seafood.name %> -	<%= number_to_currency(seafood.price, :unit => "£") %>
-				<input type="checkbox">
+				<%= food.name %> -	<%= number_to_currency(food.price, :unit => "£") %>
+				<input type="checkbox" class="food_selected" id="food_<%= food.id %>">
 			</li>
-				 <label for="<%= seafood.id %>_quantity">Qty:</label>
+				 <label for="<%= food.id %>_quantity">Qty:</label>
 				 <input type="text" 
-				 		name="food[<%= seafood.id %>][quantity]" 
+				 		name="food[<%= food.id %>][quantity]" 
 				 		size="2" 
-				 		id="<%= seafood.id %>_quantity">
+				 		id="quantity_<%= food.id %>">
 		</ul>
 	<% end %>
 
 	<h3><u>Rice</u></h3>
-	<% @food.where(course: 'main_rice').each do |rice| %>
+	<% @food.where(course: 'main_rice').each do |food| %>
 		<ul>
 			<li>
-				<%= rice.name %> -	<%= number_to_currency(rice.price, :unit => "£") %>
-				<input type="checkbox">
+				<%= food.name %> -	<%= number_to_currency(food.price, :unit => "£") %>
+				<input type="checkbox" class="food_selected" id="food_<%= food.id %>">
 			</li>
-				 <label for="<%= rice.id %>_quantity">Qty:</label>
+				 <label for="<%= food.id %>_quantity">Qty:</label>
 				 <input type="text" 
-				 		name="food[<%= rice.id %>][quantity]" 
+				 		name="food[<%= food.id %>][quantity]" 
 				 		size="2" 
-				 		id="<%= rice.id %>_quantity">
+				 		id="quantity_<%= food.id %>">
 		</ul>
 	<% end %>
 
 	<h3><u>Noodles</u></h3>
-	<% @food.where(course: 'main_noodles').each do |noodle| %>
+	<% @food.where(course: 'main_noodles').each do |food| %>
 		<ul>
 			<li>
-				<%= noodle.name %> -	<%= number_to_currency(noodle.price, :unit => "£") %>
-				<input type="checkbox">
+				<%= food.name %> -	<%= number_to_currency(food.price, :unit => "£") %>
+				<input type="checkbox" class="food_selected" id="food_<%= food.id %>">
 			</li>
-				 <label for="<%= noodle.id %>_quantity">Qty:</label>
+				 <label for="<%= food.id %>_quantity">Qty:</label>
 				 <input type="text" 
-				 		name="food[<%= noodle.id %>][quantity]" 
+				 		name="food[<%= food.id %>][quantity]" 
 				 		size="2" 
-				 		id="<%= noodle.id %>_quantity">
+				 		id="quantity_<%= food.id %>">
 		</ul>
 	<% end %>
 
 	
 	<h2><u>Desserts</u></h2>
 
-	<% @food.where(course: 'dessert').each do |dessert| %>
+	<% @food.where(course: 'dessert').each do |food| %>
 		<ul>
 			<li>
-				<%= dessert.name %> -	<%= number_to_currency(dessert.price, :unit => "£") %>
-				<input type="checkbox">
+				<%= food.name %> -	<%= number_to_currency(food.price, :unit => "£") %>
+				<input type="checkbox" class="food_selected" id="food_<%= food.id %>">
 			</li>
-				 <label for="<%= dessert.id %>_quantity">Qty:</label>
+				 <label for="<%= food.id %>_quantity">Qty:</label>
 				 <input type="text" 
-				 		name="food[<%= dessert.id %>][quantity]" 
+				 		name="food[<%= food.id %>][quantity]" 
 				 		size="2" 
-				 		id="<%= dessert.id %>_quantity">
+				 		id="quantity_<%= food.id %>">
 		</ul>
 	<% end %>
 
 
 	<h2><u>Beverages</u></h2>
 
-	<% @food.where(course: 'beverage').each do |beverage| %>
+	<% @food.where(course: 'beverage').each do |food| %>
 		<ul>
 			<li>
-				<%= beverage.name %> -	<%= number_to_currency(beverage.price, :unit => "£") %>
-				<input type="checkbox">
+				<%= food.name %> -	<%= number_to_currency(food.price, :unit => "£") %>
+				<input type="checkbox" class="food_selected" id="food_<%= food.id %>">
 			</li>
-				 <label for="<%= beverage.id %>_quantity">Qty:</label>
+				 <label for="<%= food.id %>_quantity">Qty:</label>
 				 <input type="text" 
-				 		name="food[<%= beverage.id %>][quantity]" 
+				 		name="food[<%= food.id %>][quantity]" 
 				 		size="2" 
-				 		id="<%= beverage.id %>_quantity">
+				 		id="quantity_<%= food.id %>">
 		</ul>
 	<% end %>
 

@@ -1,15 +1,27 @@
 <h1>Order Info:</h1>
-<h3>List of Food: -</h3>
 
-	<li>
-		<% @unique_foods.each do |food| %>
-			Name: <%= food.name %> <br>
-			Price: <%= number_to_currency(food.price, :unit => "£") %> <br>
-			Quantity: <%= @quantities[food] %> <br><br>
-		<% end %>
-	</li>
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Quantity</th>
+		<th>Price</th>
+
+	</tr>
+	
+	<% @unique_foods.each do |food| %>
+		<tr>
+			<td><%= food.name %></td>
+			<td><%= @quantities[food] %></td>
+			<td><%= food.price %></td>
+		</tr>
+	<% end %>
+</table>
 
 <p>Order total: <%= number_to_currency(@order.total, :unit => "£") %></p>
 
 <p>Delivering to: <%= @order.delivery_address %> </p>
 <p>Contact Info: <%= @order.contact_number %> </p>
+
+<%= link_to "Edit order", order_edit_path %>
+
+
