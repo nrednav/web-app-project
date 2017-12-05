@@ -1,7 +1,7 @@
-$(document).ready(function() {
+$(document).on("turbolinks:load", function() {
 
 
-	// This function will handle providing the quantity of a selected food item with a default value of 1
+	// This function will handle providing the quantity of a selected food item with a default value of
 	$('.food_selected').each(function() {
 
 		$(this).change(function() {
