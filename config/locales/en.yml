@@ -46,6 +46,7 @@ en:
       login: "Login"
       logout: "Logout"
       register: "Register"
+      view_orders: "View Orders"
 
   menu:
     

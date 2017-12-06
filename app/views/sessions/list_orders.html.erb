@@ -1,0 +1,24 @@
+<h1><u>List of Orders: -</u></h1>
+
+<table>
+	<tr>
+		<th><u>Order #</u></th>
+		<th><u>Total</u></th>
+		<th><u>Date Ordered</u></th>
+		<th><u>Summary</u></th>
+
+	</tr>
+	
+	<% @orders.each do |order| %>
+		<tr>
+			<td><%= link_to "Order #{order.id}", view_order_path(order.id) %></td>
+			<td><%= number_to_currency(order.total, :unit => "£") %></td>
+			<td><%= order.updated_at.to_date %></td>
+			<td>
+				<% order.foods.uniq.each do |food| %>
+					<%= food.name %>,
+				<% end %>
+			</td>
+		</tr>
+	<% end %>
+</table>

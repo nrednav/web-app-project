@@ -19,4 +19,22 @@ class SessionsController < ApplicationController
   	redirect_to root_path
   end
 
+  def view_order
+    @order = Order.find(params[:id])
+
+    # Retrieve a list of all the unique food items
+    @unique_foods = @order.foods.uniq 
+
+    # Retrace quantities of each item in order
+    @quantities = Hash.new(0)
+
+    @order.foods.each do |food|
+      @quantities[food] += 1
+    end
+  end
+
+  def list_orders
+    @orders = current_user.orders
+  end
+
 end

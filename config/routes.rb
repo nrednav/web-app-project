@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 	match '/order', :to => 'order#show', :via => :get
 	match '/order/create', :to => 'order#create', :via => :post
 	match '/order/edit', :to => 'order#edit', :via => :get
+	match '/orders', :to => 'sessions#list_orders', :via => :get
+	match '/orders/view/:id', :to => 'sessions#view_order', :via => :get, as: "view_order"
 
 	# User Authentication routes
 	match '/login', :to => 'sessions#new', :via => :get

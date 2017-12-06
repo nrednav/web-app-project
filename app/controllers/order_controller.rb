@@ -32,6 +32,10 @@ class OrderController < ApplicationController
 
 			@order.save
 
+			if (current_user != nil) 
+				current_user.orders << @order
+			end
+
 			redirect_to order_path
 		end
 
