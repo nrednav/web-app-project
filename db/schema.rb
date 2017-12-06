@@ -10,15 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171204003743) do
-
-  create_table "customers", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.boolean "isMember"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 20171206200724) do
 
   create_table "foods", force: :cascade do |t|
     t.string "name"
@@ -41,6 +33,21 @@ ActiveRecord::Schema.define(version: 20171204003743) do
     t.datetime "updated_at", null: false
     t.text "delivery_address"
     t.string "contact_number"
+  end
+
+  create_table "orders_users", id: false, force: :cascade do |t|
+    t.integer "order_id"
+    t.integer "user_id"
+    t.index ["order_id", "user_id"], name: "index_orders_users_on_order_id_and_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email", null: false
+    t.string "crypted_password"
+    t.string "salt"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
 end

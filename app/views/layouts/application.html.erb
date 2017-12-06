@@ -11,6 +11,11 @@
   </head>
 
   <body>
+
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg %> 
+    <% end %>
+
     <%= yield %>
   </body>
 </html>

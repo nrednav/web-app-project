@@ -1,6 +1,13 @@
 <%= link_to t('main.home.title'), root_path %>
 <%= link_to t('main.navigation.menu'), menu_path %>
-<%= link_to t('main.navigation.login')%>
-<%= link_to t('main.navigation.register')%>
 <%= link_to t('main.nagivation.contact'), contact_path %>
+<% if current_user %>
+	<%= link_to t('main.navigation.logout'), logout_path %>
+<% else %>
+	<%= link_to t('main.navigation.register'), register_path %>
+	<%= link_to t('main.navigation.login'), login_path %>
+<% end %>
+
+
+
 

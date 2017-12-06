@@ -44,6 +44,7 @@ en:
       contact: "Contact"
       menu: "Menu"
       login: "Login"
+      logout: "Logout"
       register: "Register"
 
   menu:

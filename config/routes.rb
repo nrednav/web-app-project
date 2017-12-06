@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'order/create'
-
-	# Default route
+	# Root route
 	root 'main#home'
 
 	# Contact route
@@ -20,5 +18,12 @@ Rails.application.routes.draw do
 	match '/order', :to => 'order#show', :via => :get
 	match '/order/create', :to => 'order#create', :via => :post
 	match '/order/edit', :to => 'order#edit', :via => :get
+
+	# User Authentication routes
+	match '/login', :to => 'sessions#new', :via => :get
+	match '/logout', :to => 'sessions#destroy', :via => :get
+	match '/register', :to => 'users#new', :via => :get
+	resources :users
+	resources :sessions
 
 end
