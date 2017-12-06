@@ -1,0 +1,29 @@
+$(document).on("turbolinks:load", function() {
+
+	// Array to store names of unique foods as keys to quantities hash
+	var food_names = new Array(gon.unique_foods.length); 
+	// Array to store ids of unique foods to turn on matching checkboxes in edit form
+	var ids = new Array(gon.unique_foods.length); 
+
+	// Go through unique foods and get names + ids 
+	for (i in gon.unique_foods)
+	{
+		ids[i] = gon.unique_foods[i].id;
+		food_names[i] = gon.unique_foods[i].name;
+	}
+
+	// Check the boxes with matching food ids and set quantities
+	$('.food_selected').each(function() {
+
+		var text = $(this).attr("id");
+		var id = text.substr(text.indexOf('_')+1, text.length);
+
+		for (x in ids) {
+			if(id == parseInt(ids[x])) {
+				$(this).attr("checked", true);
+				$('#quantity_' + id).val(gon.quantities[food_names[x]]);
+			}
+		}
+	});
+
+});

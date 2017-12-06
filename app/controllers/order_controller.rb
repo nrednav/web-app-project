@@ -52,9 +52,19 @@ class OrderController < ApplicationController
 	end
 
 	def edit
-	end
+		@food = Food.where(cuisine: 'cn')
+		@order = Order.last
 
-	def update
+		@quantities = Hash.new(0)
+		@order.foods.each do |food|
+			@quantities[food.name] += 1
+		end
+
+		gon.foods = @order.foods
+		gon.unique_foods = @order.foods.uniq
+		gon.quantities = @quantities
+
+		@order.destroy
 	end
 
 end

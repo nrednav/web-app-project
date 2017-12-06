@@ -7,6 +7,8 @@ end
 
 # Use jQuery
 gem 'jquery-rails'
+# Use Gon to handle passing data to js from controller
+gem 'gon'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use sqlite3 as the database for Active Record
