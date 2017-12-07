@@ -2,13 +2,13 @@
 
 <%= form_tag sessions_path do %>
 
-	<%= label_tag :email %>
+	<%= label_tag :email %> <br>
 	<%= text_field_tag :email, params[:email] %>
 	<br>
-	<%= label_tag :password %>
+	<%= label_tag :password %> <br>
 	<%= password_field_tag :password %>
 	<br>
 	<%= submit_tag "Login" %>
 
-<% end %>
+<% end %> <br>
 

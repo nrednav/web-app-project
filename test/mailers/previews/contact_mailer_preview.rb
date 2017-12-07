@@ -2,6 +2,6 @@
 class ContactMailerPreview < ActionMailer::Preview
 
 	def send_email_confirmation
-		ContactMailer.send_email_confirmation("Bob", "bob@bob.com", "12345688", @message = "Hello")
+		ContactMailer.send_email_confirmation("Bob", "bob@gmail.com", "+44 07278710", @message = "Test Message")
 	end
 end
