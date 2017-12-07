@@ -39,6 +39,16 @@ en:
 
     contact:
       title: "Contact us"
+      instruction: "To get in touch with us, kindly fill in the following form: -"
+
+      name: "Name: "
+      email: "E-mail: "
+      telephone: "Telephone: "
+      message: "Message: "
+
+    request_contact:
+      no_email: "Please enter your e-mail address."
+      email_sent: "Thank you for your message. We will be in touch shortly."
 
     navigation:
       contact: "Contact"

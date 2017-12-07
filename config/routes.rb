@@ -3,8 +3,9 @@ Rails.application.routes.draw do
 	# Root route
 	root 'main#home'
 
-	# Contact route
+	# Contact routes
 	match '/contact', :to => 'main#contact', :via => :get
+	match '/contact/request', :to => 'main#request_contact', :via => :post, as: "request_contact"
 
 	# Menu route
 	match '/menu', :to => 'menu#menu', :via => :get
