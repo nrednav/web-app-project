@@ -3,6 +3,7 @@
 <table>
 	<tr>
 		<th><u>Order #</u></th>
+		<th><u>Cuisine</u></th>
 		<th><u>Total</u></th>
 		<th><u>Date Ordered</u></th>
 		<th><u>Summary</u></th>
@@ -12,6 +13,9 @@
 	<% @orders.each do |order| %>
 		<tr>
 			<td><%= link_to "Order #{order.id}", view_order_path(order.id) %></td>
+			<td>
+				<%= t('menu.cuisine.' + order.foods.first.cuisine) %>
+			</td>
 			<td><%= number_to_currency(order.total, :unit => "£") %></td>
 			<td><%= order.updated_at.to_date %></td>
 			<td>
