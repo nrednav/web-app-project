@@ -1,0 +1,7 @@
+<h1><u>Order Confirmation</u></h1>
+
+<% if @user_flag == "new" %>
+	<%= render 'partials/confirmOrderNew' %>
+<% else %>
+	<%= render 'partials/confirmOrderExisting' %>
+<% end %>

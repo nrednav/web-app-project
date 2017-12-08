@@ -71,7 +71,32 @@ class OrderController < ApplicationController
 		@order.destroy
 	end
 
-	def confirm
-	end
+	def confirm_order
 
+		case request.method
+		when 'POST'
+			if (!current_user)
+				# Get and store the params in the last order available
+				@order = Order.last
+				@order.delivery_address = params[:order][:delivery_address]
+				@order.contact_number = params[:order][:contact_number]
+				@order.save
+			else
+				# Get the users last order ( which is the present one )
+				@order = current_user.orders.last
+				@order.delivery_address = params[:order][:delivery_address]
+				@order.contact_number = params[:order][:contact_number]
+				@order.save
+			end
+
+		when 'GET'
+			if (!current_user)
+				@order = Order.last
+				@user_flag = "new"
+			else
+				@order = current_user.orders.last
+				@user_flag = "existing"
+			end
+		end
+	end
 end
