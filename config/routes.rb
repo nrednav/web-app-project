@@ -30,5 +30,6 @@ Rails.application.routes.draw do
 	match '/register', :to => 'users#new', :via => :get
 	match '/sessions', :to => 'sessions#create', :via => :post, as: "sessions"
 	match '/users', :to => 'users#create', :via => :post,  as: "users"
+	match '/register/confirm', :to => 'users#confirm_registration', :via => :post, as: "confirm_registration"
 
 end

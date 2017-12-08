@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   	@user = User.new(user_params)
 
   	if @user.save
+      RegistrationMailer.send_email_confirmation(@user.email).deliver_now
   		redirect_to root_path, :notice => "You are now registered!"
   	else
   		render :new
