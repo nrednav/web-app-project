@@ -19,9 +19,24 @@
 
 <p>Order total: <%= number_to_currency(@order.total, :unit => "£") %></p>
 
-<p>Delivering to: <%= @order.delivery_address %> </p>
-<p>Contact Info: <%= @order.contact_number %> </p>
-
 <%= link_to "Edit order", order_edit_path %>
+
+<h2><u>Delivery Details</u></h2>
+
+<form action="/order/confirm" method="post">
+
+	<input type="hidden" value="<%= form_authenticity_token %>" name="authenticity_token">
+
+	<label for="contact_number">Contact Number:</label> <br>
+	<input type="text" name="delivery[contact_number]"> <br>
+
+	<label for="delivery_address">Delivery Address:</label> <br>
+	<textarea name="delivery[address]" cols="30" rows="4"></textarea> <br>
+
+	<input type="submit" value="Confirm">
+</form>
+
+
+
 
 

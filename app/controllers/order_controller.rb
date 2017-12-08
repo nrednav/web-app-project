@@ -27,18 +27,18 @@ class OrderController < ApplicationController
 			end
 
 
-			@order.contact_number = params[:delivery][:contact_no]
-			@order.delivery_address = params[:delivery][:address]
+			@order.contact_number = ""
+			@order.delivery_address = ""
 
 			@order.save
 
+			# If user is logged in, save the order to their list of orders
 			if (current_user != nil) 
 				current_user.orders << @order
 			end
 
 			redirect_to order_path
 		end
-
 	end
 
 	def show
@@ -52,12 +52,12 @@ class OrderController < ApplicationController
 		@order.foods.each do |food|
 			@quantities[food] += 1
 		end
-
 	end
 
 	def edit
-		@food = Food.where(cuisine: 'cn')
 		@order = Order.last
+		@cuisine = @order.foods.first.cuisine
+		@food = Food.where(cuisine: @cuisine)
 
 		@quantities = Hash.new(0)
 		@order.foods.each do |food|
@@ -69,6 +69,9 @@ class OrderController < ApplicationController
 		gon.quantities = @quantities
 
 		@order.destroy
+	end
+
+	def confirm
 	end
 
 end

@@ -54,3 +54,69 @@ end
 		<p>Quantity: <%= value["quantity"] %></p>
 	</li>
 <% end %>
+
+
+
+
+-------------------------
+
+<div class="order_confirmation">
+
+	<% if @request == "c_new"%>
+
+		<p>
+			Your order is now in the kitchen and will be with you shortly. <br><br>
+
+			<u>Delivery Address: -</u>
+			<li><%= @order.delivery_address %></li> <br>
+
+			You will receive a call on the number you provided: <%= @order.contact_number %>, 
+			when the driver is nearby to your location. <br><br>
+
+			If you have not already registered and would like to, you may do so here:
+			<%= link_to t('main.navigation.register'), register_path %> <br><br>
+
+			Once registered, you will be able to view all your previous orders
+			as well as be able to re-order them. <br><br>
+
+			We thank you for choosing to dine with Kenpachi and do hope you enjoy your meal.
+		</p>
+
+	<% elsif @request == "r" || @request == "c_existing" %>
+
+		<p>
+			Your order is now in the kitchen and will be with you shortly. <br><br>
+
+			<u>Delivery Address: -</u>
+			<li><%= @order.delivery_address %></li> <br>
+
+			You will receive a call on your number: <%= @order.contact_number %>, When the driver is nearby to your location. <br><br>
+
+			We thank you one again for choosing to dine with Kenpachi and do hope you enjoy your meal.
+		</p>
+
+	<% end %>
+</div>
+
+		# # If the user is not registered
+		# if (request.referer == order_url) && (!current_user)
+		# 	@order = Order.last
+		# 	@order.delivery_address = params[:delivery][:address]
+		# 	@order.contact_number = params[:delivery][:contact_number]
+		# 	@order.save
+
+		# 	@request = "c_new"
+
+		# # If the user is registered and placing a new order
+		# elsif (request.referer == order_url) && (current_user)
+		# 	@order = current_user.orders.last
+		# 	@order.delivery_address = params[:delivery][:address]
+		# 	@order.contact_number = params[:delivery][:contact_number]
+		# 	@order.save	
+		# 	@request = "c_existing"
+
+		# # If the user is re-ordering
+		# else
+		# 	@order = current_user.orders.last	
+		# 	@request = "r"
+		# end

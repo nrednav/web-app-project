@@ -21,12 +21,14 @@ Rails.application.routes.draw do
 	match '/order/edit', :to => 'order#edit', :via => :get
 	match '/orders', :to => 'sessions#list_orders', :via => :get
 	match '/orders/view/:id', :to => 'sessions#view_order', :via => :get, as: "view_order"
-
+	match '/order/confirm', :to => 'order#confirm', :via => :post, as: "confirm_order"
+	match '/order/confirm', :to => 'order#confirm', :via => :get, as: "confirm_reorder"
+	
 	# User Authentication routes
 	match '/login', :to => 'sessions#new', :via => :get
 	match '/logout', :to => 'sessions#destroy', :via => :get
 	match '/register', :to => 'users#new', :via => :get
-	resources :users
-	resources :sessions
+	match '/sessions', :to => 'sessions#create', :via => :post, as: "sessions"
+	match '/users', :to => 'users#create', :via => :post,  as: "users"
 
 end
