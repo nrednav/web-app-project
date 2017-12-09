@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   def new
+    @title = t('main.navigation.register')
   	@user = User.new
     @current_user = current_user
   end

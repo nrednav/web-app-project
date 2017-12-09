@@ -9,13 +9,13 @@ class MenuController < ApplicationController
 
 		case @cuisine
 		when 'cn'
-			@food = Food.where(:cuisine => 'cn')	
+			@food = Food.cuisine("cn")	
 			render 'menu/cuisine/cn'
 		when 'jp'	
-			@food = Food.where(:cuisine => 'jp')
+			@food = Food.cuisine("jp")
 			render 'menu/cuisine/jp'
 		when 'kr'
-			@food = Food.where(:cuisine => 'kr')
+			@food = Food.cuisine("kr")
 			render 'menu/cuisine/kr'
 		end
 	end

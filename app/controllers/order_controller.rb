@@ -1,14 +1,12 @@
 class OrderController < ApplicationController
 
-	# This method assists in the creation of an order object
+	# Create the order and add all selected foods to it
 	def create
 		@order = Order.new
 		@order.total = 0	
 
 		# Remove items where no quantity is selected
-		@selected_foods = params[:food].select {|key, value|
-			value["quantity"] != ""
-		}
+		@selected_foods = params[:food].select {|key, value| value["quantity"] != ""}
 
 		if @selected_foods.keys.empty?
 			redirect_to menu_cn_path
@@ -26,7 +24,6 @@ class OrderController < ApplicationController
 				end
 			end
 
-
 			@order.contact_number = ""
 			@order.delivery_address = ""
 
@@ -41,6 +38,7 @@ class OrderController < ApplicationController
 		end
 	end
 
+	# Display a summary of the order
 	def show
 		@order = Order.last # Get most recent order
 
@@ -54,10 +52,11 @@ class OrderController < ApplicationController
 		end
 	end
 
+	# Handle updating the order with changes made
 	def edit
 		@order = Order.last
 		@cuisine = @order.foods.first.cuisine
-		@food = Food.where(cuisine: @cuisine)
+		@food = Food.cuisine(@cuisine)
 
 		@quantities = Hash.new(0)
 		@order.foods.each do |food|
@@ -71,6 +70,7 @@ class OrderController < ApplicationController
 		@order.destroy
 	end
 
+	# Handle displaying order confirmation
 	def confirm_order
 
 		case request.method

@@ -3,7 +3,7 @@
 	<input type="hidden" value="<%= form_authenticity_token %>" name="authenticity_token">
 	
 	<h2><u>Appetizers: -</u></h2>
-	<% @food.where(course: 'appetizer').each do |food| %>
+	<% @food.course('appetizer').each do |food| %>
 		<ul>
 			<li>
 				<%= food.name %> -	<%= number_to_currency(food.price, :unit => "£") %>

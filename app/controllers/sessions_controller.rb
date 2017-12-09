@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
 
   def new
+    @title = t('main.navigation.login')
   end
 
   def create
@@ -9,7 +10,7 @@ class SessionsController < ApplicationController
   	if user
   		redirect_to root_path, :notice => "You have successfully logged in!"
   	else
-  		flash.now.alert = "Email or Password was incorrect"
+  		flash.now.alert = "The E-mail or Password you entered was incorrect."
   		render :new
   	end
   end
