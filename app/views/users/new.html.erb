@@ -1,26 +1,28 @@
-<h1><u>Register</u></h1>
+<div class="register_form">
+	<h1><u>Register</u></h1>
 
-<%= form_for @user do |f| %>
+	<%= form_for @user do |f| %>
 
-	<% if @user.errors.any? %>
-		<h2>Invalid Form</h2>
-		<ul>
-			<% for message in @user.errors.full_messages %>
-				<li><%= message %></li>
-			<% end %>
-		</ul>
-	<% end %>
+		<% if @user.errors.any? %>
+			<h2>Invalid Form</h2>
+			<ul>
+				<% for message in @user.errors.full_messages %>
+					<li><%= message %></li>
+				<% end %>
+			</ul>
+		<% end %>
 
-	<%= f.label :email %> <br>
-	<%= f.text_field :email %>
-	<br>
-	<%= f.label :password %> <br>
-	<%= f.password_field :password %>
-	<br>
-	<%= f.label :password_confirmation %> <br>
-	<%= f.password_field :password_confirmation %>
+		<%= f.label :email %> <br>
+		<%= f.text_field :email %>
+		<br>
+		<%= f.label :password %> <br>
+		<%= f.password_field :password %>
+		<br>
+		<%= f.label :password_confirmation %> <br>
+		<%= f.password_field :password_confirmation %>
 
-	<br>
-	<%= f.submit :Register %>
-	
-<% end %> <br>
+		<br>
+		<%= f.submit :Register %>
+		
+	<% end %> <br>
+</div>

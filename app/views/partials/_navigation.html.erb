@@ -1,13 +1,19 @@
-<%= link_to t('main.home.title'), root_path %>
-<%= link_to t('.menu'), menu_path %>
-<%= link_to t('.contact'), contact_path %>
-<% if current_user %>
-	<%= link_to t('.view_orders'), orders_path %>
-	<%= link_to t('.logout'), logout_path %>
-<% else %>
-	<%= link_to t('.register'), register_path %>
-	<%= link_to t('.login'), login_path %>
-<% end %>
+<div class="nav">
+	<ul>
+		<li id="title"><%= link_to t('title'), root_path %></li>
+
+		<% if current_user %>
+			<li><%= link_to t('.logout'), logout_path %></li>
+			<li><%= link_to t('.view_orders'), orders_path %></li>
+		<% else %>
+			<li><%= link_to t('.login'), login_path %></li>	
+			<li><%= link_to t('.register'), register_path %></li>
+		<% end %>
+
+		<li><%= link_to t('.contact'), contact_path %></li>
+		<li><%= link_to t('.menu'), menu_path %></li>
+	</ul>
+</div>
 
 
 

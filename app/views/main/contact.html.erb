@@ -1,32 +1,34 @@
-<h1><u><%=t ('.title') %></u></h1>
+<div class="contact_form">
+	<h1><u><%=t ('.title') %></u></h1>
 
-<p><u><%=t ('.instruction') %></u></p>
+	<p><u><%=t ('.instruction') %></u></p>
 
-<%= form_tag request_contact_path do %>
+	<%= form_tag request_contact_path do %>
 
-	<div class="field">
-		<%= label_tag :name, t('.name') %> <br>
-		<%= text_field_tag :name %> <br>
-	</div>
+		<div class="field">
+			<%= label_tag :name, t('.name') %> <br>
+			<%= text_field_tag :name %> <br>
+		</div>
 
-	<div class="field">
-		<%= label_tag :email, t('.email') %> <br>
-		<%= text_field_tag :email %> <br>
-	</div>
+		<div class="field">
+			<%= label_tag :email, t('.email') %> <br>
+			<%= text_field_tag :email %> <br>
+		</div>
 
-	<div class="field">
-		<%= label_tag :telephone, t('.telephone') %> <br>
-		<%= text_field_tag :telephone %> <br>
-	</div>
+		<div class="field">
+			<%= label_tag :telephone, t('.telephone') %> <br>
+			<%= text_field_tag :telephone %> <br>
+		</div>
 
-	<div class="field">
-		<%= label_tag :message, t('.message') %> <br>
-		<%= text_area_tag :message %> <br>
-	</div>
+		<div class="field">
+			<%= label_tag :message, t('.message') %> <br>
+			<%= text_area_tag :message %> <br>
+		</div>
 
-	<%= submit_tag "Submit" %>
+		<%= submit_tag "Submit" %>
 
-<% end %><br>
+	<% end %><br>
+</div>
 
 
 
