@@ -78,15 +78,13 @@ class OrderController < ApplicationController
 			if (!current_user)
 				# Get and store the params in the last order available
 				@order = Order.last
-				@order.delivery_address = params[:order][:delivery_address]
-				@order.contact_number = params[:order][:contact_number]
-				@order.save
+				@order.update(delivery_address: params[:order][:delivery_address],
+							  contact_number: params[:order][:contact_number])
 			else
 				# Get the users last order ( which is the present one )
 				@order = current_user.orders.last
-				@order.delivery_address = params[:order][:delivery_address]
-				@order.contact_number = params[:order][:contact_number]
-				@order.save
+				@order.update(delivery_address: params[:order][:delivery_address],
+					  		  contact_number: params[:order][:contact_number])
 			end
 
 		when 'GET'

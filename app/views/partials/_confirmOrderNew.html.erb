@@ -2,9 +2,11 @@
 	Your order is now in the kitchen and will be with you shortly. <br><br>
 
 	<u>Delivery Address: -</u>
-	<li><%= @order.delivery_address %></li> <br>
+	<li>
+		<b><%= @order.delivery_address %></b>
+	</li> <br>
 
-	You will receive a call on the number you have provided: <%= @order.contact_number %>, 
+	You will receive a call on the number you have provided: <b><em><%= @order.contact_number %></em></b>, 
 	when the driver is nearby to your location. <br><br>
 
 	If you have not already registered and would like to, you may do so here:
