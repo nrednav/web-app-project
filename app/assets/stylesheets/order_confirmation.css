@@ -1,0 +1,35 @@
+.order_confirmation {
+	margin: 0 auto;
+	margin-top: 5%;
+	width: 50%; 
+	padding: 2%;
+	padding-bottom: 5px;
+	color: white;
+	background: #333;
+	max-width: auto;
+	border-radius: 15px;
+	box-sizing: border-box;
+	text-align: center;
+	margin-bottom: 10%;
+}
+
+.order_confirmation #register_button {
+	background-color: #333;
+	opacity: 0.95;
+	color: white;
+	border-radius: 10px;
+	border: 1px solid white;
+	outline-width: 0px;
+	font-size: 25px;
+	cursor: pointer;
+	display: block;
+	display: inline-block;
+	padding: 10px;
+	text-decoration: none;
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+
+.order_confirmation #register_button:hover {
+	background-color: #404040;
+}
