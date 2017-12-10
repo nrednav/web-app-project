@@ -1,4 +1,86 @@
-/*
-  Place all the styles related to the matching controller here.
-  They will automatically be included in application.css.
-*/
+.order_info, .delivery_info {
+	margin: 0 auto;
+	margin-top: 5%;
+	width: 50%; 
+	padding: 2%;
+	padding-bottom: 5px;
+	color: white;
+	background: #333;
+	max-width: auto;
+	border-radius: 15px;
+	box-sizing: border-box;
+	text-align: center;
+	margin-bottom: 10%;
+}
+
+.order_info #edit_button {
+	background-color: #333;
+	opacity: 0.95;
+	color: white;
+	border-radius: 10px;
+	border: 1px solid white;
+	outline-width: 0px;
+	font-size: 25px;
+	cursor: pointer;
+	display: block;
+	display: inline-block;
+	padding: 10px;
+	text-decoration: none;
+	margin-bottom: 5%;
+}
+
+.order_info #edit_button:hover, .delivery_info #submit_button:hover {
+	background-color: #404040;
+}
+
+.order_info #food_ordered {
+	border-collapse: collapse;
+	width: 100%
+}
+
+.delivery_info #submit_button {
+	background-color: #333;
+	opacity: 0.95;
+	color: white;
+	border-radius: 10px;
+	border: 1px solid white;
+	outline-width: 0px;
+	font-size: 25px;
+	cursor: pointer;
+	display: block;
+	display: inline-block;
+	padding: 10px;
+	text-decoration: none;
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+
+.delivery_info label {
+	font-size: 20px;
+}
+
+.delivery_info input[type=text] {
+	margin: 0 auto;
+	padding: 10px;
+	width: 50%;
+	display: block;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    outline-width: 0px;
+    font-size: 20px;
+}
+
+.delivery_info textarea {
+	margin: 0 auto;
+	border-radius: 10px;
+    box-sizing: border-box;
+	border: 2px solid #ccc;
+	width: 75%;
+	height: 125px;
+	padding: 10px;
+}
+
+.order_info #food_ordered , #order_total {
+	font-size: 18px;
+}

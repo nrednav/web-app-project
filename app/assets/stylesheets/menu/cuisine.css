@@ -13,6 +13,10 @@
 	margin-bottom: 10%;
 }
 
+
+/*
+ * MENU BUTTON STYLES
+ */
 .cuisine_form .menu_button {
 	background-color: #333;
 	opacity: 0.95;
@@ -39,17 +43,27 @@
 	text-decoration: none;
 }
 
+.cuisine_form #submit_button:hover, #back_button:hover {
+	background-color: #404040;
+}
+
 .buttons {
 	margin-bottom: 10%;
 }
 
-.appetizers-toggle:hover {
-	cursor: pointer;
-	text-decoration: underline;
-	text-decoration-color: white;
-}
 
-.maincourse-toggle:hover {
+/*
+ * ACCORDION TOGGLE STYLES
+ */
+.appetizers-toggle:hover,
+.maincourse-toggle:hover, 
+.main_chicken-toggle:hover,
+.main_veg-toggle:hover,
+.main_seafood-toggle:hover,
+.main_rice-toggle:hover,
+.main_noodles-toggle:hover,
+.dessert-toggle:hover,
+.beverage-toggle:hover {
 	cursor: pointer;
 	text-decoration: underline;
 	text-decoration-color: white;
@@ -59,18 +73,10 @@
 	padding-top: 15px;
 }
 
-.dessert-toggle:hover {
-	cursor: pointer;
-	text-decoration: underline;
-	text-decoration-color: white;
-}
 
-.beverage-toggle:hover {
-	cursor: pointer;
-	text-decoration: underline;
-	text-decoration-color: white;
-}
-
+/*
+ * ACCORDION STYLES
+ */
 .apt-accordion {
 	opacity: 0;
 	background: #333;
@@ -85,7 +91,7 @@
 .apt-accordion.open {
 	opacity: 1;
 	padding: 10px;
-	max-height: 700px;
+	max-height: 1500px;
 }
 
 .main-accordion {
@@ -102,7 +108,7 @@
 .main-accordion.open {
 	opacity: 1;
 	padding: 10px;
-	max-height: 1800px;
+	max-height: 2100px;
 }
 
 .mc-accordion {
@@ -223,4 +229,30 @@
 	padding: 10px;
 	max-height: 700px;
 	margin-bottom: 20px;
+}
+
+
+/*
+ * FOOD ITEM STYLES
+ */
+.cuisine_form .food_items {
+	text-align: left;
+}
+
+.cuisine_form .food_selected {
+	width: 25px;
+	height: 25px;
+	float: right;
+}
+
+.cuisine_form .lblQuantity {
+	font-size: 12px;
+}
+
+.cuisine_form .food_quantity {
+	font-weight: bold;
+}
+
+.cuisine_form #food_details {
+	padding-right: 100px;
 }

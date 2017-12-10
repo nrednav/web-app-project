@@ -7,17 +7,21 @@
 	
 		<div class="apt-accordion">
 			<% @food.course('appetizer').each do |food| %>
-				<ul>
+				<ul class="food_items">
 					<li id="<%= food.price %>" class="price">
-						<%= food.name %> - <%= number_to_currency(food.price, :unit => "£") %>
-						<input type="checkbox" class="food_selected" id="food_<%= food.id %>">
+						<p>
+							<span id="food_details">
+								<%= food.name %> - <%= number_to_currency(food.price, :unit => "£") %>
+							</span> 
+							<input type="checkbox" class="food_selected" id="food_<%= food.id %>">
+						</p>		
 					</li>
-						 <label for="<%= food.id %>_quantity">Qty:</label>
-						 <input type="text" 
-						 		name="food[<%= food.id %>][quantity]" 
-						 		size="2" 
-						 		class="food_quantity"
-						 		id="quantity_<%= food.id %>">
+					 <label for="<%= food.id %>_quantity" class="lblQuantity">Quantity:</label>
+					 <input type="text" 
+					 		name="food[<%= food.id %>][quantity]" 
+					 		size="2" 
+					 		class="food_quantity"
+					 		id="quantity_<%= food.id %>">
 				</ul>
 			<% end %>
 		</div>
@@ -31,16 +35,21 @@
 			<h3 class="main_chicken-toggle">Chicken</h3>
 			<div class="mc-accordion">
 				<% @food.where(course: 'main_chicken').each do |food| %>
-					<ul>
+					<ul class="food_items">
 						<li id="<%= food.price %>" class="price">
-							<%= food.name %> -	<%= number_to_currency(food.price, :unit => "£") %>
-							<input type="checkbox" class="food_selected" id="food_<%= food.id %>">
+							<p>
+								<span id="food_details">
+									<%= food.name %> - <%= number_to_currency(food.price, :unit => "£") %>
+								</span> 
+								<input type="checkbox" class="food_selected" id="food_<%= food.id %>">
+							</p>		
 						</li>
-							 <label for="<%= food.id %>_quantity">Qty:</label>
-							 <input type="text" 
-							 		name="food[<%= food.id %>][quantity]" 
-							 		size="2" 
-							 		id="quantity_<%= food.id %>">
+						 <label for="<%= food.id %>_quantity" class="lblQuantity">Quantity:</label>
+						 <input type="text" 
+						 		name="food[<%= food.id %>][quantity]" 
+						 		size="2" 
+						 		class="food_quantity"
+						 		id="quantity_<%= food.id %>">
 					</ul>
 				<% end %>
 			</div>
@@ -48,16 +57,21 @@
 			<h3 class="main_veg-toggle">Vegetarian</h3>
 			<div class="mveg-accordion">
 				<% @food.where(course: 'main_veg').each do |food| %>
-					<ul>
+					<ul class="food_items">
 						<li id="<%= food.price %>" class="price">
-							<%= food.name %> -	<%= number_to_currency(food.price, :unit => "£") %>
-							<input type="checkbox" class="food_selected" id="food_<%= food.id %>">
+							<p>
+								<span id="food_details">
+									<%= food.name %> - <%= number_to_currency(food.price, :unit => "£") %>
+								</span> 
+								<input type="checkbox" class="food_selected" id="food_<%= food.id %>">
+							</p>		
 						</li>
-							 <label for="<%= food.id %>_quantity">Qty:</label>
-							 <input type="text" 
-							 		name="food[<%= food.id %>][quantity]" 
-							 		size="2" 
-							 		id="quantity_<%= food.id %>">
+						 <label for="<%= food.id %>_quantity" class="lblQuantity">Quantity:</label>
+						 <input type="text" 
+						 		name="food[<%= food.id %>][quantity]" 
+						 		size="2" 
+						 		class="food_quantity"
+						 		id="quantity_<%= food.id %>">
 					</ul>
 				<% end %>
 			</div>
@@ -66,16 +80,21 @@
 			<h3 class="main_seafood-toggle">Seafood</h3>
 			<div class="msea-accordion">
 				<% @food.where(course: 'main_seafood').each do |food| %>
-					<ul>
+					<ul class="food_items">
 						<li id="<%= food.price %>" class="price">
-							<%= food.name %> -	<%= number_to_currency(food.price, :unit => "£") %>
-							<input type="checkbox" class="food_selected" id="food_<%= food.id %>">
+							<p>
+								<span id="food_details">
+									<%= food.name %> - <%= number_to_currency(food.price, :unit => "£") %>
+								</span> 
+								<input type="checkbox" class="food_selected" id="food_<%= food.id %>">
+							</p>		
 						</li>
-							 <label for="<%= food.id %>_quantity">Qty:</label>
-							 <input type="text" 
-							 		name="food[<%= food.id %>][quantity]" 
-							 		size="2" 
-							 		id="quantity_<%= food.id %>">
+						 <label for="<%= food.id %>_quantity" class="lblQuantity">Quantity:</label>
+						 <input type="text" 
+						 		name="food[<%= food.id %>][quantity]" 
+						 		size="2" 
+						 		class="food_quantity"
+						 		id="quantity_<%= food.id %>">
 					</ul>
 				<% end %>			
 			</div>
@@ -83,16 +102,21 @@
 			<h3 class="main_rice-toggle">Rice</h3>
 			<div class="mrice-accordion">
 				<% @food.where(course: 'main_rice').each do |food| %>
-					<ul>
+					<ul class="food_items">
 						<li id="<%= food.price %>" class="price">
-							<%= food.name %> -	<%= number_to_currency(food.price, :unit => "£") %>
-							<input type="checkbox" class="food_selected" id="food_<%= food.id %>">
+							<p>
+								<span id="food_details">
+									<%= food.name %> - <%= number_to_currency(food.price, :unit => "£") %>
+								</span> 
+								<input type="checkbox" class="food_selected" id="food_<%= food.id %>">
+							</p>		
 						</li>
-							 <label for="<%= food.id %>_quantity">Qty:</label>
-							 <input type="text" 
-							 		name="food[<%= food.id %>][quantity]" 
-							 		size="2" 
-							 		id="quantity_<%= food.id %>">
+						 <label for="<%= food.id %>_quantity" class="lblQuantity">Quantity:</label>
+						 <input type="text" 
+						 		name="food[<%= food.id %>][quantity]" 
+						 		size="2" 
+						 		class="food_quantity"
+						 		id="quantity_<%= food.id %>">
 					</ul>
 				<% end %>
 			</div>
@@ -101,16 +125,21 @@
 			<h3 class="main_noodles-toggle">Noodles</h3>
 			<div class="mn-accordion">
 				<% @food.where(course: 'main_noodles').each do |food| %>
-					<ul>
+					<ul class="food_items">
 						<li id="<%= food.price %>" class="price">
-							<%= food.name %> -	<%= number_to_currency(food.price, :unit => "£") %>
-							<input type="checkbox" class="food_selected" id="food_<%= food.id %>">
+							<p>
+								<span id="food_details">
+									<%= food.name %> - <%= number_to_currency(food.price, :unit => "£") %>
+								</span> 
+								<input type="checkbox" class="food_selected" id="food_<%= food.id %>">
+							</p>		
 						</li>
-							 <label for="<%= food.id %>_quantity">Qty:</label>
-							 <input type="text" 
-							 		name="food[<%= food.id %>][quantity]" 
-							 		size="2" 
-							 		id="quantity_<%= food.id %>">
+						 <label for="<%= food.id %>_quantity" class="lblQuantity">Quantity:</label>
+						 <input type="text" 
+						 		name="food[<%= food.id %>][quantity]" 
+						 		size="2" 
+						 		class="food_quantity"
+						 		id="quantity_<%= food.id %>">
 					</ul>
 				<% end %>
 			</div>
@@ -121,17 +150,22 @@
 		<h2 class="dessert-toggle">Dessert</h2>
 		<div class="des-accordion">
 			<% @food.where(course: 'dessert').each do |food| %>
-				<ul>
-					<li id="<%= food.price %>" class="price">
-						<%= food.name %> -	<%= number_to_currency(food.price, :unit => "£") %>
-						<input type="checkbox" class="food_selected" id="food_<%= food.id %>">
-					</li>
-						 <label for="<%= food.id %>_quantity">Qty:</label>
+					<ul class="food_items">
+						<li id="<%= food.price %>" class="price">
+							<p>
+								<span id="food_details">
+									<%= food.name %> - <%= number_to_currency(food.price, :unit => "£") %>
+								</span> 
+								<input type="checkbox" class="food_selected" id="food_<%= food.id %>">
+							</p>		
+						</li>
+						 <label for="<%= food.id %>_quantity" class="lblQuantity">Quantity:</label>
 						 <input type="text" 
 						 		name="food[<%= food.id %>][quantity]" 
 						 		size="2" 
+						 		class="food_quantity"
 						 		id="quantity_<%= food.id %>">
-				</ul>
+					</ul>
 			<% end %>
 		</div>
 
@@ -140,17 +174,22 @@
 		<h2 class="beverage-toggle">Beverages</h2>
 		<div class="bev-accordion">
 			<% @food.where(course: 'beverage').each do |food| %>
-				<ul>
-					<li id="<%= food.price %>" class="price">
-						<%= food.name %> -	<%= number_to_currency(food.price, :unit => "£") %>
-						<input type="checkbox" class="food_selected" id="food_<%= food.id %>">
-					</li>
-						 <label for="<%= food.id %>_quantity">Qty:</label>
+					<ul class="food_items">
+						<li id="<%= food.price %>" class="price">
+							<p>
+								<span id="food_details">
+									<%= food.name %> - <%= number_to_currency(food.price, :unit => "£") %>
+								</span> 
+								<input type="checkbox" class="food_selected" id="food_<%= food.id %>">
+							</p>		
+						</li>
+						 <label for="<%= food.id %>_quantity" class="lblQuantity">Quantity:</label>
 						 <input type="text" 
 						 		name="food[<%= food.id %>][quantity]" 
 						 		size="2" 
+						 		class="food_quantity"
 						 		id="quantity_<%= food.id %>">
-				</ul>
+					</ul>
 			<% end %>
 		</div>
 

@@ -1,0 +1,13 @@
+$(document).on("turbolinks:load", function() {
+
+	$('.edit_order').submit(function() {
+
+		if (!$('input#delivery_cn').val()) {
+			alert("Please enter a contact number.");
+			return false;
+		} else if (!$('textarea#delivery_addr').val()) {
+			alert("Please enter the delivery address.");
+			return false;
+		} 
+	});
+});

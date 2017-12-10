@@ -1,39 +1,46 @@
-<h1>Order Info:</h1>
+<div class="order_info">
+	<h1>Order Information</h1>
 
-<table>
-	<tr>
-		<th>Name</th>
-		<th>Quantity</th>
-		<th>Price per item</th>
-
-	</tr>
-	
-	<% @unique_foods.each do |food| %>
+	<table id="food_ordered">
 		<tr>
-			<td><%= food.name %></td>
-			<td><%= @quantities[food] %></td>
-			<td><%= number_to_currency(food.price, :unit => "£")%></td>
+			<th><u>Name</u></th>
+			<th><u>Quantity</u></th>
+			<th><u>Price per item</u></th>
 		</tr>
-	<% end %>
-</table>
+		
+		<hr>
 
-<p>Order total: <%= number_to_currency(@order.total, :unit => "£") %></p>
+		<% @unique_foods.each do |food| %>
+			<tr>
+				<td><%= food.name %></td>
+				<td><%= @quantities[food] %></td>
+				<td><%= number_to_currency(food.price, :unit => "£")%></td>
+			</tr>
+		<% end %>
+	</table>
 
-<%= link_to "Edit order", order_edit_path %>
+	<p id="order_total">Order total: <%= number_to_currency(@order.total, :unit => "£") %></p>
 
-<h2><u>Delivery Details</u></h2>
+	<%= link_to 'Edit Order', order_edit_url, :method => :get, :id => "edit_button" %> 
+</div>
 
- <%= form_for @order, url: confirm_order_path, method: "post" do |f| %>
-	
-	<%= f.label :contact_number, "Contact Number:" %> <br>
-	<%= f.text_field :contact_number %> <br>
+<div class="delivery_info">
+	<h1>Delivery Details</h1>
 
-	<%= f.label :delivery_address, "Delivery Address:" %> <br>
-	<%= f.text_area :delivery_address %> <br>
+	<hr><br>
 
-	<%= f.submit "Submit" %>
+	 <%= form_for @order, url: confirm_order_path, method: "post" do |f| %>
+		
+		<%= f.label :contact_number, "Contact Number:" %> <br>
+		<%= f.text_field :contact_number, :id => "delivery_cn" %> <br>
 
- <% end %>
+		<%= f.label :delivery_address, "Delivery Address:" %> <br>
+		<%= f.text_area :delivery_address, :id => "delivery_addr" %> <br>
+
+		<%= f.submit "Confirm Order", :id => "submit_button" %>
+
+	 <% end %>
+</div>
 
 
 
