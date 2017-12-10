@@ -14,6 +14,83 @@
  *= require_tree .
  */
 
-body { margin: 0; }
+* { 
+	font-family: Arial, Helvetica, sans-serif;
+}
 
-* { font-family: Arial, Helvetica, sans-serif; }
+body, .slider {
+
+	margin: 0;
+	background-image: url(Slide_1);
+	background-size: cover;
+	-webkit-animation: slide 25s infinite;
+	-moz-animation: slide 25s infinite;
+	animation: slide 25s infinite;
+}
+
+@-webkit-keyframes slide{
+	25%{
+		background-image: url(Slide_2);
+		background-size: cover;
+	}
+
+	50%{
+		background-image: url(Slide_3);
+		background-size: cover;
+	}
+
+	75%{
+		background-image: url(Slide_4);
+		background-size: cover;
+	}
+
+	100%{
+		background-image: url(Slide_1);
+		background-size: cover;
+	}
+}
+
+@-moz-keyframes slide{
+	25%{
+		background-image: url(Slide_2);
+		background-size: cover;
+	}
+
+	50%{
+		background-image: url(Slide_3);
+		background-size: cover;
+	}
+
+	75%{
+		background-image: url(Slide_4);
+		background-size: cover;
+	}
+
+	100%{
+		background-image: url(Slide_1);
+		background-size: cover;
+	}
+}
+
+@keyframes slide{
+	25%{
+		background-image: url(Slide_2);
+		background-size: cover;
+	}
+
+	50%{
+		background-image: url(Slide_3);
+		background-size: cover;
+	}
+
+	75%{
+		background-image: url(Slide_4);
+		background-size: cover;
+	}
+
+	100%{
+		background-image: url(Slide_1);
+		background-size: cover;
+	}
+}
+

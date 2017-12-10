@@ -1,4 +1,226 @@
 .cuisine_form {
+	margin: 0 auto;
+	margin-top: 5%;
+	width: 50%; 
+	padding: 2%;
+	padding-bottom: 5px;
+	color: white;
+	background: #333;
+	max-width: auto;
+	border-radius: 15px;
+	box-sizing: border-box;
+	text-align: center;
+	margin-bottom: 10%;
+}
+
+.cuisine_form .menu_button {
+	background-color: #333;
+	opacity: 0.95;
+	color: white;
+	border-radius: 10px;
+	border: 1px solid white;
+	outline-width: 0px;
+	font-size: 25px;
+	cursor: pointer;
+	display: block;
+	margin-left: auto;
+	display: inline-block;
+	margin-bottom: 30px;
+}
+
+.cuisine_form #submit_button {
+	float: right;
 	padding: 10px;
-	padding-top: 50px;
+}
+
+.cuisine_form #back_button {
+	float: left;
+	padding: 10px;
+	text-decoration: none;
+}
+
+.buttons {
+	margin-bottom: 10%;
+}
+
+.appetizers-toggle:hover {
+	cursor: pointer;
+	text-decoration: underline;
+	text-decoration-color: white;
+}
+
+.maincourse-toggle:hover {
+	cursor: pointer;
+	text-decoration: underline;
+	text-decoration-color: white;
+}
+
+.maincourse-toggle, .dessert-toggle, .beverage-toggle {
+	padding-top: 15px;
+}
+
+.dessert-toggle:hover {
+	cursor: pointer;
+	text-decoration: underline;
+	text-decoration-color: white;
+}
+
+.beverage-toggle:hover {
+	cursor: pointer;
+	text-decoration: underline;
+	text-decoration-color: white;
+}
+
+.apt-accordion {
+	opacity: 0;
+	background: #333;
+	padding: 0 10px;
+	max-height: 0;
+	overflow: hidden;
+	transition: all 0.2s ease;
+	display: inline-block;
+	color: white;
+}
+
+.apt-accordion.open {
+	opacity: 1;
+	padding: 10px;
+	max-height: 700px;
+}
+
+.main-accordion {
+	opacity: 0;
+	background: #333;
+	padding: 0 10px;
+	max-height: 0;
+	overflow: hidden;
+	transition: all 0.2s ease;
+	display: inline-block;
+	color: white;
+}
+
+.main-accordion.open {
+	opacity: 1;
+	padding: 10px;
+	max-height: 1800px;
+}
+
+.mc-accordion {
+	opacity: 0;
+	background: #333;
+	padding: 0 10px;
+	max-height: 0;
+	overflow: hidden;
+	transition: all 0.2s ease;
+	display: inline-block;
+	color: white;
+}
+
+.mc-accordion.open {
+	opacity: 1;
+	padding: 10px;
+	max-height: 700px;
+}
+
+.mveg-accordion {
+	opacity: 0;
+	background: #333;
+	padding: 0 10px;
+	max-height: 0;
+	overflow: hidden;
+	transition: all 0.2s ease;
+	display: inline-block;
+	color: white;
+}
+
+.mveg-accordion.open {
+	opacity: 1;
+	padding: 10px;
+	max-height: 700px;
+}
+
+.msea-accordion {
+	opacity: 0;
+	background: #333;
+	padding: 0 10px;
+	max-height: 0;
+	overflow: hidden;
+	transition: all 0.2s ease;
+	display: inline-block;
+	color: white;
+}
+
+.msea-accordion.open {
+	opacity: 1;
+	padding: 10px;
+	max-height: 700px;
+}
+
+.mrice-accordion {
+	opacity: 0;
+	background: #333;
+	padding: 0 10px;
+	max-height: 0;
+	overflow: hidden;
+	transition: all 0.2s ease;
+	display: inline-block;
+	color: white;
+}
+
+.mrice-accordion.open {
+	opacity: 1;
+	padding: 10px;
+	max-height: 700px;
+}
+
+.mn-accordion {
+	opacity: 0;
+	background: #333;
+	padding: 0 10px;
+	max-height: 0;
+	overflow: hidden;
+	transition: all 0.2s ease;
+	display: inline-block;
+	color: white;
+}
+
+.mn-accordion.open {
+	opacity: 1;
+	padding: 10px;
+	max-height: 700px;
+}
+
+.des-accordion {
+	opacity: 0;
+	background: #333;
+	padding: 0 10px;
+	max-height: 0;
+	overflow: hidden;
+	transition: all 0.2s ease;
+	display: inline-block;
+	color: white;
+}
+
+.des-accordion.open {
+	opacity: 1;
+	padding: 10px;
+	max-height: 700px;
+}
+
+.bev-accordion {
+	opacity: 0;
+	background: #333;
+	padding: 0 10px;
+	max-height: 0;
+	overflow: hidden;
+	transition: all 0.2s ease;
+	display: inline-block;
+	color: white;
+}
+
+.bev-accordion.open {
+	opacity: 1;
+	padding: 10px;
+	max-height: 700px;
+	margin-bottom: 20px;
 }

@@ -1,10 +1,23 @@
 <div class="menu">
-	<h1>Please select a cuisine:</h1>
 
 	<div class="cuisines">
-		<a href="<%= menu_cn_path %>"><%= image_tag('cn_flag') %></a>
-		<a href="<%= menu_jp_path %>"><%= image_tag('jp_flag') %></a>
-		<a href="<%= menu_kr_path %>"><%= image_tag('kr_flag') %></a>
+		<h1>Please select a cuisine:</h1>
+
+		<div class="country">
+			<%= link_to(image_tag('cn_flag'), menu_cn_path) %>
+			<p>Chinese</p>			
+		</div>
+
+		<div class="country">
+			<%= link_to(image_tag('jp_flag'), menu_jp_path) %>
+			<p>Japanese</p>
+		</div>
+
+		<div class="country">
+			<%= link_to(image_tag('kr_flag'), menu_kr_path) %>		
+			<p>Korean</p>
+		</div>
+
 	</div>   
 
 	<br>
