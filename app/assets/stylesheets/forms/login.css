@@ -1,4 +1,49 @@
 .login_form {
-	padding: 15px;
-	padding-top: 50px;
+	margin: 0 auto;
+	width: 50%;
+	margin-top: 10%;
+	padding: 1%;
+    border-radius: 10px;
+    background-color: #333;
+    color: white;
+    opacity: 0.85;
 }
+
+h1 {
+	text-align: center;
+}
+
+.login_form label {
+	font-size: 25px;
+}
+
+.login_form input[type=submit] {
+
+    width: 100%;
+    background-color: #3981c7;
+    color: white;
+    padding: 14px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.login_form input[type=submit]:hover {
+    background-color: #2565a4;
+}
+
+.login_form input[type=text], input[type=password] {
+	
+	margin: 0 auto;
+	padding: 10px;
+	width: 100%;
+	display: block;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    outline-width: 0px;
+    font-size: 20px;
+}
+

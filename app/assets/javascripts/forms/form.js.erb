@@ -1,0 +1,23 @@
+$(document).on("turbolinks:load", function() {
+
+	$('#form').submit(function() {
+
+		var total = 0;
+
+		$('.food_selected:checkbox:checked').each(function() {
+
+			// Get food id
+			var text = $(this).attr("id");
+			var id = text.substr(text.indexOf('_')+1, text.length);
+			var quantity = 	parseInt($('#quantity_' + id).val());
+
+			total += (parseInt($(this).closest(".price").attr("id")) * quantity);
+		});
+
+		if (total < 10)
+		{
+			alert("We are not able to deliver food on orders below £10. \nAmount remaining: £" + (10-total));
+			return false;
+		} 
+	});
+});

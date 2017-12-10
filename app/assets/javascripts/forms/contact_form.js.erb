@@ -1,0 +1,22 @@
+$(document).on("turbolinks:load", function() {
+
+	$('.contact_form').submit(function() {
+
+		// Check if fields are empty
+		if (!$('input#name').val()) {
+			alert("Please enter your name.");
+			return false;
+		} else if (!isValidEmail($('input#email').val())) {
+			alert("Please enter a valid e-mail address.");
+			return false;
+		} else if (!$('textarea#message').val()) {
+			alert("Please enter your message.");
+			return false;
+		} 
+	});
+
+	function isValidEmail(email) {
+    	var regex = new RegExp("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.");
+    	return (email.match(regex) == null) ? false : true;
+	}
+});

@@ -1,11 +1,11 @@
 <div class="menu">
 	<h1>Please select a cuisine:</h1>
 
-	<ul>
-		<li><%= link_to t('menu.cuisine.cn'), menu_cn_path %></li>
-		<li><%= link_to t('menu.cuisine.jp'), menu_jp_path %></li>
-		<li><%= link_to t('menu.cuisine.kr'), menu_kr_path %></li>
-	</ul>
-	    
+	<div class="cuisines">
+		<a href="<%= menu_cn_path %>"><%= image_tag('cn_flag') %></a>
+		<a href="<%= menu_jp_path %>"><%= image_tag('jp_flag') %></a>
+		<a href="<%= menu_kr_path %>"><%= image_tag('kr_flag') %></a>
+	</div>   
+
 	<br>
 </div>

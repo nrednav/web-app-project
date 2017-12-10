@@ -9,10 +9,10 @@ class SessionsController < ApplicationController
 
   	if user
   		redirect_to root_path, :notice => "You have successfully logged in!"
-  	else
-  		flash.now.alert = "The E-mail or Password you entered was incorrect."
-  		render :new
-  	end
+    else
+      redirect_back(fallback_location: root_path,  
+                   :flash => { :error => "The password or e-mail address you have entered is incorrect."})
+    end
   end
 
   def destroy

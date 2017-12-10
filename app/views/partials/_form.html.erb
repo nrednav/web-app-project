@@ -1,12 +1,12 @@
-<form action="/order/create" method="post">
+<form action="/order/create" method="post" id="form">
 
 	<input type="hidden" value="<%= form_authenticity_token %>" name="authenticity_token">
 	
 	<h2><u>Appetizers: -</u></h2>
 	<% @food.course('appetizer').each do |food| %>
 		<ul>
-			<li>
-				<%= food.name %> -	<%= number_to_currency(food.price, :unit => "£") %>
+			<li id="<%= food.price %>" class="price">
+				<%= food.name %> - <%= number_to_currency(food.price, :unit => "£") %>
 				<input type="checkbox" class="food_selected" id="food_<%= food.id %>">
 			</li>
 				 <label for="<%= food.id %>_quantity">Qty:</label>
@@ -23,7 +23,7 @@
 	<h3><u>Chicken</u></h3>
 	<% @food.where(course: 'main_chicken').each do |food| %>
 		<ul>
-			<li>
+			<li id="<%= food.price %>" class="price">
 				<%= food.name %> -	<%= number_to_currency(food.price, :unit => "£") %>
 				<input type="checkbox" class="food_selected" id="food_<%= food.id %>">
 			</li>
@@ -38,7 +38,7 @@
 	<h3><u>Vegetarian</u></h3>
 	<% @food.where(course: 'main_veg').each do |food| %>
 		<ul>
-			<li>
+			<li id="<%= food.price %>" class="price">
 				<%= food.name %> -	<%= number_to_currency(food.price, :unit => "£") %>
 				<input type="checkbox" class="food_selected" id="food_<%= food.id %>">
 			</li>
@@ -53,7 +53,7 @@
 	<h3><u>Seafood</u></h3>
 	<% @food.where(course: 'main_seafood').each do |food| %>
 		<ul>
-			<li>
+			<li id="<%= food.price %>" class="price">
 				<%= food.name %> -	<%= number_to_currency(food.price, :unit => "£") %>
 				<input type="checkbox" class="food_selected" id="food_<%= food.id %>">
 			</li>
@@ -68,7 +68,7 @@
 	<h3><u>Rice</u></h3>
 	<% @food.where(course: 'main_rice').each do |food| %>
 		<ul>
-			<li>
+			<li id="<%= food.price %>" class="price">
 				<%= food.name %> -	<%= number_to_currency(food.price, :unit => "£") %>
 				<input type="checkbox" class="food_selected" id="food_<%= food.id %>">
 			</li>
@@ -83,7 +83,7 @@
 	<h3><u>Noodles</u></h3>
 	<% @food.where(course: 'main_noodles').each do |food| %>
 		<ul>
-			<li>
+			<li id="<%= food.price %>" class="price">
 				<%= food.name %> -	<%= number_to_currency(food.price, :unit => "£") %>
 				<input type="checkbox" class="food_selected" id="food_<%= food.id %>">
 			</li>
@@ -100,7 +100,7 @@
 
 	<% @food.where(course: 'dessert').each do |food| %>
 		<ul>
-			<li>
+			<li id="<%= food.price %>" class="price">
 				<%= food.name %> -	<%= number_to_currency(food.price, :unit => "£") %>
 				<input type="checkbox" class="food_selected" id="food_<%= food.id %>">
 			</li>
@@ -117,7 +117,7 @@
 
 	<% @food.where(course: 'beverage').each do |food| %>
 		<ul>
-			<li>
+			<li id="<%= food.price %>" class="price">
 				<%= food.name %> -	<%= number_to_currency(food.price, :unit => "£") %>
 				<input type="checkbox" class="food_selected" id="food_<%= food.id %>">
 			</li>
@@ -131,5 +131,5 @@
 
 	<br><br>
 
-	<input type="submit" value="Submit">
+	<input type="submit" value="Submit" id="submit_button"> <br>
 </form>
