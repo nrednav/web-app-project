@@ -1,6 +1,6 @@
 class OrderController < ApplicationController
 
-	# Create the order and add all selected foods to it
+	# This method will create the order and add all selected foods to it
 	def create
 		@order = Order.new
 		@order.total = 0	
@@ -80,11 +80,14 @@ class OrderController < ApplicationController
 				@order = Order.last
 				@order.update(delivery_address: params[:order][:delivery_address],
 							  contact_number: params[:order][:contact_number])
+
+				@user_flag = "new"
 			else
 				# Get the users last order ( which is the present one )
 				@order = current_user.orders.last
 				@order.update(delivery_address: params[:order][:delivery_address],
 					  		  contact_number: params[:order][:contact_number])
+				@user_flag = "existing"
 			end
 
 		when 'GET'

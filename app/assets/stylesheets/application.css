@@ -94,3 +94,21 @@ body, .slider {
 	}
 }
 
+#notice_wrapper {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 999;
+	background: rgba(189, 255, 141, 0.85);
+}
+
+.notice {
+	padding: 2.0rem 0;
+	text-align: center;
+	margin: 0;
+	font-size: 25px;
+	font-weight: bold;
+	color: white;
+	letter-spacing: 1.5px;
+}
+

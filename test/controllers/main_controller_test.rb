@@ -15,7 +15,7 @@ class MainControllerTest < ActionDispatch::IntegrationTest
 	end
 
 	test "should request contact" do
-		post '/contact/request'
+		post '/contact/request', params: {:email => "support@kenpachi.com"}
 		assert_response :redirect
 	end
 end

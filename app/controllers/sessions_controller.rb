@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
   	user = login(params[:email], params[:password])
 
   	if user
-  		redirect_to root_path, :notice => "You have successfully logged in!"
+  		redirect_to root_path, :notice => "You have logged in successfully!"
     else
       redirect_back(fallback_location: root_path,  
                    :flash => { :error => "The password or e-mail address you have entered is incorrect."})
@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
 
   def destroy
   	logout
-  	redirect_to root_path
+  	redirect_to root_path, :notice => "You have logged out successfully!"
   end
 
   def view_order

@@ -13,7 +13,7 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
 
   test "should login" do	
   	post '/sessions'
-  	assert_response :success
+  	assert_response :redirect
   end
 
   test "should logout" do

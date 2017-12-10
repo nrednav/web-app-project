@@ -1,22 +1,8 @@
-// $(document).on("turbolinks:load", function() {
+$(document).on("turbolinks:load", function() {
 
-// 	var slideIndex = 0;
-
-// 	function carousel() {
-
-// 		var i;
-// 		var x = document.getElementByClassName("slides");
-
-// 		for(i = 0; i < x.length; i++) {
-// 			x[i].style.display = "none";
-// 		}
-
-// 		slideIndex++;
-
-// 		if (slideIndex > x.length) {slideIndex = 1}
-// 		x[slideIndex - 1].style.display = "block";
-// 		setTimeout(carousel, 4000);
-// 	}
-
-// 	carousel();
-// });
+	setTimeout(function() {
+		$('#notice_wrapper').fadeOut("slow", function() {
+			$(this).remove();
+		});
+	}, 2750);
+});

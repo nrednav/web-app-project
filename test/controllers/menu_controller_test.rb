@@ -5,9 +5,9 @@ class MenuControllerTest < ActionDispatch::IntegrationTest
 	test "should get menu" do
 		get '/menu'
 		assert_response :success
-		assert_select "a[href=\"#{menu_cn_path}\"]", "Chinese"
-		assert_select "a[href=\"#{menu_jp_path}\"]", "Japanese"
-		assert_select "a[href=\"#{menu_kr_path}\"]", "Korean"
+		assert_select "p", "Chinese"
+		assert_select "p", "Japanese"
+		assert_select "p", "Korean"
 	end
 
 	test "should get chinese cuisine menu" do

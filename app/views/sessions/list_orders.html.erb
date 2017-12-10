@@ -1,28 +1,35 @@
-<h1><u>List of Orders: -</u></h1>
+<div class="view_orders">
 
-<table>
-	<tr>
-		<th><u>Order #</u></th>
-		<th><u>Cuisine</u></th>
-		<th><u>Total</u></th>
-		<th><u>Date Ordered</u></th>
-		<th><u>Summary</u></th>
-
-	</tr>
+	<h1>List of Orders</h1>
 	
-	<% @orders.each do |order| %>
+	<hr>
+
+	<table id="list_of_orders">
+
 		<tr>
-			<td><%= link_to "Order #{order.id}", view_order_path(order.id) %></td>
-			<td>
-				<%= t('menu.cuisine.' + order.foods.first.cuisine) %>
-			</td>
-			<td><%= number_to_currency(order.total, :unit => "£") %></td>
-			<td><%= order.updated_at.to_date %></td>
-			<td>
-				<% order.foods.uniq.each do |food| %>
-					<%= food.name %>,
-				<% end %>
-			</td>
+			<th><u>Order #</u></th>
+			<th><u>Cuisine</u></th>
+			<th><u>Total</u></th>
+			<th><u>Date Ordered</u></th>
+			<th><u>Summary</u></th>
+
 		</tr>
-	<% end %>
-</table> <br>
+		
+		<% @orders.each do |order| %>
+			<tr>
+				<td><%= link_to "Order #{order.id}", view_order_path(order.id) %></td>
+				<td>
+					<%= t('menu.cuisine.' + order.foods.first.cuisine) %>
+				</td>
+				<td><%= number_to_currency(order.total, :unit => "£") %></td>
+				<td><%= order.updated_at.to_date %></td>
+				<td>
+					<% order.foods.uniq.each do |food| %>
+						<%= food.name %>,
+					<% end %>
+				</td>
+			</tr>
+		<% end %>
+
+	</table> <br>
+</div>

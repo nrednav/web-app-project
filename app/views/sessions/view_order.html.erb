@@ -1,26 +1,32 @@
-<h1><u> Order #<%= @order.id %> </u></h1>
-
-<table>
-	<tr>
-		<th>Name</th>
-		<th>Quantity</th>
-		<th>Price</th>
-
-	</tr>
+<div class="order_info">
+	<h1> Order #<%= @order.id %> </h1>
 	
-	<% @unique_foods.each do |food| %>
+	<hr>
+
+	<table id="food_ordered">
 		<tr>
-			<td><%= food.name %></td>
-			<td><%= @quantities[food] %></td>
-			<td><%= food.price %></td>
+			<th><u>Name</u></th>
+			<th><u>Quantity</u></th>
+			<th><u>Price per item</u></th>
+
 		</tr>
-	<% end %>
-</table>
+		
+		<% @unique_foods.each do |food| %>
+			<tr>
+				<td><%= food.name %></td>
+				<td><%= @quantities[food] %></td>
+				<td><%= number_to_currency(food.price, :unit => "£")%></td>
+			</tr>
+		<% end %>
+	</table>
 
-<p>Order total: <%= number_to_currency(@order.total, :unit => "£") %></p>
+	<p id="order_total">Order total: <%= number_to_currency(@order.total, :unit => "£") %></p>
 
-<p>Delivering to: <%= @order.delivery_address %> </p>
-<p>Contact Info: <%= @order.contact_number %> </p>
-
-<%= link_to 'Back', orders_path %>
-<%= link_to 'Re-order', confirm_order_path %>
+	<p id="contact_number">Contact Number: <em><%= @order.contact_number %></em></p>
+	<p id="delivery_address">Delivering to: <em><%= @order.delivery_address %></em></p>
+	
+	<div class="buttons">
+		<%= link_to 'Back', orders_url, class: "menu_button", :method => :get, :id => "back_button" %>
+		<%= link_to 'Re-Order', confirm_order_url, class: "menu_button", id: "reorder_button" %>
+	</div>
+</div>

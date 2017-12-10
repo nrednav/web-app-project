@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 
   	if @user.save
       RegistrationMailer.send_email_confirmation(@user.email).deliver_now
-  		redirect_to root_path, :notice => "You are now registered!"
+  		redirect_to root_path, :notice => "Registration Successfull!"
   	else
   		render :new
   	end

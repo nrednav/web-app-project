@@ -3,7 +3,7 @@
 	margin-top: 5%;
 	width: 50%; 
 	padding: 2%;
-	padding-bottom: 5px;
+	padding-bottom: 20px;
 	color: white;
 	background: #333;
 	max-width: auto;
@@ -11,6 +11,7 @@
 	box-sizing: border-box;
 	text-align: center;
 	margin-bottom: 10%;
+	opacity: 0.9;
 }
 
 .order_info #edit_button {
@@ -29,7 +30,7 @@
 	margin-bottom: 5%;
 }
 
-.order_info #edit_button:hover, .delivery_info #submit_button:hover {
+.order_info #edit_button:hover, .delivery_info #confirm_order_button:hover {
 	background-color: #404040;
 }
 
@@ -38,7 +39,7 @@
 	width: 100%
 }
 
-.delivery_info #submit_button {
+.delivery_info #confirm_order_button {
 	background-color: #333;
 	opacity: 0.95;
 	color: white;
@@ -81,6 +82,37 @@
 	padding: 10px;
 }
 
-.order_info #food_ordered , #order_total {
+.order_info #food_ordered , #order_total, #contact_number, #delivery_address {
 	font-size: 18px;
+}
+
+.order_info #contact_number, #delivery_address {
+	color: CadetBlue;
+}
+
+.order_info #back_button {
+	float: left;
+	padding: 10px;
+	text-decoration: none;
+}
+
+.order_info #reorder_button {
+	float: right;
+	padding: 10px;
+	text-decoration: none;
+}
+
+.order_info .menu_button {
+	background-color: #333;
+	opacity: 0.95;
+	color: white;
+	border-radius: 10px;
+	border: 1px solid white;
+	outline-width: 0px;
+	font-size: 25px;
+	cursor: pointer;
+	display: block;
+	margin-left: auto;
+	display: inline-block;
+	margin-bottom: 30px;
 }

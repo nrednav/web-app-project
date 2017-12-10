@@ -11,13 +11,23 @@
   </head>
 
   <body>
-    <div>
+<!--     <div>
       <li>
         <% flash.each do |name, msg| %>
-          <%= content_tag :div, msg, class: "flash_messages" %> 
+          <%= content_tag :div, msg, class: "flash_message" %> 
         <% end %>
       </li>
-    </div>
+    </div> -->
+    
+    <% if notice %>
+      <div id="notice_wrapper">
+          <p class="notice"><%= notice %></p>
+      </div>
+    <% elsif alert %>
+        <div id="alert_wrapper">
+          <p class="alert"><%= notice %></p>
+      </div>
+    <% end %>
 
     <%= yield %>
 
