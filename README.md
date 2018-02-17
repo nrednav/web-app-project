@@ -1,8 +1,39 @@
 # Web App Dev Project
 
-For this project, I had the freedom of choosing a topic of my choice for which I chose to model a restaurants website that included basic support for the ordering of food online.
+For this project, I had to develop a web application for a topic of my choice, using the Ruby on Rails framework.
 
-My approach to this was to create a restaurant that served 3 asian cuisines: Chinese, Japanese and Korean.
+I chose to model a restaurants website that included basic support for the ordering of food online.
+
+The base idea was to have a restaurant that serves three asian cuisines: 
+> Chinese, Japanese & Korean
+
+## General Overview
+  
+> 1. Homepage:
+<img src="screenshots/homepage.png" width="700" height="350" />
+<br />
+
+> 2. Contact:
+<img src="screenshots/contactpage.png" width="700" height="350" />  
+
+> 3. Register:
+<img src="screenshots/registerpage.png" width="700" height="350" />
+
+> 4. Login:
+<img src="screenshots/loginpage.png" width="700" height="350" />
+
+> 5. Cuisine selection:
+<img src="screenshots/cuisine_selection.png" width="700" height="350" />
+
+> 6. Example course content (Beverages):
+<img src="screenshots/example_meal_type.png" width="700" height="350" />
+
+> 7. Order summary
+<img src="screenshots/order_summary.png" width="700" height="350" />
+
+> 8. View previous orders:
+<img src="screenshots/view_orders.png" width="700" height="350" />
+
 
 ## Testing the application
 
