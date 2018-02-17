@@ -8,10 +8,6 @@ The base idea was to have a restaurant that serves three asian cuisines:
 > Chinese, Japanese & Korean
 
 ## General Overview
-
-<details>
-  <summary> Screenshots </summary>
-  <br>
   
 > 1. Homepage:
 <img src="screenshots/homepage.png" width="700" height="350" />
@@ -37,8 +33,7 @@ The base idea was to have a restaurant that serves three asian cuisines:
 
 > 8. View previous orders:
 <img src="screenshots/view_orders.png" width="700" height="350" />
-    
-</details>
+
 
 ## Testing the application
 
