@@ -1,24 +1,14 @@
-# README
+# Web App Dev Project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+For this project, I had the freedom of choosing a topic of my choice for which I chose to model a restaurants website that included basic support for the ordering of food online.
 
-Things you may want to cover:
+My approach to this was to create a restaurant that served 3 asian cuisines: Chinese, Japanese and Korean.
 
-* Ruby version: 2.4
+## Testing the application
 
-* System dependencies: The app seemed to perform best on google chrome, including support for animations.
+To test this web application you would need to have Ruby and the Rails gem installed.
 
-* Configuration
+Navigate into the root directory of this project and run the following command: `rails s`.
 
-* Database creation: SQLite3
+To view the website you must then visit: `http://localhost:3000` in a web browser of your choice.
 
-* Database initialization
-
-* How to run the test suite: Using "Rails test" instead of "Rake test"
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
